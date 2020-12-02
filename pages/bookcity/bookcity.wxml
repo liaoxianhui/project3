@@ -1,0 +1,54 @@
+<view class="df pf w100 t0" style="background:#F7F7F7;">
+  <view class="df jc-c" style="width:50%">
+    <view class="ptb {{num===1?'border_b':''}}" bindtap="classify" style="font-size:30rpx">分类</view>
+  </view>
+  <view class="df jc-c" style="width:50%">
+    <view class="ptb {{num===2?'border_b':''}}" bindtap="ranking" style="font-size:30rpx">排行</view>
+  </view>
+</view>
+<view wx:if="{{num===1}}" style="margin-top:80rpx">
+  <view class="m10" style="color:#999999;font-size:30rpx">男生</view>
+  <view class="vcenter">
+    <view class="df fw-w">
+      <view wx:for="{{arr}}" wx:key="index" class="ta-c" style="width:32.5%;border:1rpx solid #ccc;padding:10px 0;"
+        data-item="{{item}}" data-index="{{index}}" bindtap="clickmale">
+        <view class="fw-b fs-14">{{item.name}}</view>
+        <view class="fs-12">{{item.bookCount}}本</view>
+      </view>
+    </view>
+  </view>
+  <view class="m10" style="color:#999999;font-size:30rpx">女生</view>
+  <view class="df fw-w vcenter" style="width:100%">
+    <view wx:for="{{arrf}}" wx:key="index" class="ta-c" style="width:32.5%;border:1rpx solid #ccc;padding:10px 0"
+      data-item="{{item}}" data-index="{{index}}" bindtap="clickfemale">
+      <view class="fw-b fs-14">{{item.name}}</view>
+      <view class="fs-12">{{item.bookCount}}本</view>
+    </view>
+  </view>
+  <view class="m10 " style="color:#999999;font-size:30rpx">出版</view>
+  <view class="df fw-w vcenter" style="width:100%">
+    <view wx:for="{{arrp}}" wx:key="index" class="ta-c" style="width:32.5%;border:1rpx solid #ccc;padding:10px 0"
+      data-item="{{item}}" data-index="{{index}}" bindtap="publishtap">
+      <view class="fw-b fs-14">{{item.name}}</view>
+      <view class="fs-12">{{item.bookCount}}本</view>
+    </view>
+  </view>
+</view>
+<view wx:if="{{num===2}}" style="font-size:30rpx;margin-top:80rpx">
+  <view class="m10" style="color:#999999;font-size:30rpx">男生</view>
+  <view class="m10">
+    <view class="m5 df ai-c" wx:for="{{arrmale}}" wx:key='index' wx:if="{{index<6}}" data-item="{{item}}"
+      data-index="{{index}}" bindtap="maletap">
+      <image src="{{item.cover}}" style="width:50rpx;height:50rpx"></image>
+      <view class="m5">{{item.title}}</view>
+    </view>
+  </view>
+  <view class="m10" style="color:#999999;font-size:30rpx">女生</view>
+  <view class="m10">
+    <view class="m5 df ai-c" wx:for="{{arrfemale}}" wx:key='index' wx:if="{{index<6}}" data-item="{{item}}"
+      data-index="{{index}}" bindtap="femaletap">
+      <image src="{{item.cover}}" style="width:50rpx;height:50rpx"></image>
+      <view class="m5">{{item.title}}</view>
+    </view>
+  </view>
+</view>

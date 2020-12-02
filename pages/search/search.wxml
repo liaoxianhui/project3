@@ -1,0 +1,45 @@
+<view style="margin:20rpx" class="inputbgd">
+  <input type="text" placeholder="请输入" maxlength="63" confirm-type="search" placeholder="请输入搜索内容" value="{{inputvalue}}"
+    bindinput="searchinput" bindconfirm="searchconfirm" placeholder-class="img" class="inputtype" />
+    <image src="/assets/images/clear.png" mode="aspectFit" class="clear" wx:if="{{inputvalue!== null}}" bindtap="inputcleartap"></image>
+</view>
+<view class="df jc-sb" style="margin:20rpx;font-size:30rpx">
+  <view>大家都在搜</view>
+  <view class="df ai-c" bindtap="change">
+    <image src="/assets/images/change.png" mode="aspectFit" style="width:40rpx;height:40rpx"></image>
+    <view style="margin-left:10rpx;color:#f50f50">换一换</view>
+  </view>
+</view>
+<view style="margin:20rpx">
+  <view class="df fw-w" style="font-size:30rpx">
+    <view wx:for="{{arr3}}" wx:key="index" class="mar" bindtap="hottap" data-item="{{item}}" data-index="{{index}}"
+      style="background: {{arr2[index]}}">{{arrhot[item]}}</view>
+  </view>
+</view>
+<view class="df jc-sb" style="margin:20rpx;font-size:30rpx" wx:if="{{arr1.length!==0}}">
+  <view>搜索历史</view>
+  <view class="df" bindtap="cleartap">
+    <image src="/assets/images/del.png" mode="aspectFit" style="width:40rpx;height:40rpx"></image>
+    <view style="margin-left:10rpx;color:#f50f50;font-size:30rpx">清空</view>
+  </view>
+</view>
+<view style="margin:20rpx;font-size:30rpx">
+  <view wx:for="{{arr1}}" wx:key="index" data-item="{{item}}" data-index="{{index}}" bindtap="historytap">
+    <view style="margin:10rpx 0">{{item}}</view>
+  </view>
+</view>
+<view class="position" wx:if="{{arr.length!==0}}" wx:for-item="item" wx:for-index="index" wx:key="index">
+  <view class="margin">
+    <view wx:for="{{arr}}" wx:key="index" class="df textcolor" data-item="{{item}}" bindtap="detailtap">
+      <view>
+        <image src="{{item.cover}}" mode="aspectFit" style="width:200rpx;height:300rpx"></image>
+      </view>
+      <view style="margin-left:20rpx">
+        <view class="fw-b mt10" style="color:#000">{{item.title}}</view>
+        <view class="mt5 mb5">{{item.author}}</view>
+        <view class="three">{{item.shortIntro}}</view>
+        <view class="mt5" style="color:#f50f50">最近收藏：{{item.latelyFollower}}</view>
+      </view>
+    </view>
+  </view>
+</view>

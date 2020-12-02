@@ -1,0 +1,15 @@
+/* pages/bookcity/bookcity.wxss */
+.border_b {
+  border-bottom: 4rpx solid #f50f50;
+  color: #f50f50;
+  /* flex-wrap: wrap; */
+}
+
+.ptb {
+  padding: 10rpx 0;
+}
+
+.vcenter {
+  
+  margin-left: 2rpx;
+}

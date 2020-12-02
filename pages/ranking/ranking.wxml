@@ -1,0 +1,17 @@
+<view class="df f7" wx:if="{{monthRank!=='undefined'}}">
+  <view class="{{num===1?'redun':''}}" bindtap="weekly">周榜</view>
+  <view class="{{num===2?'redun':''}}" bindtap="month">月榜</view>
+  <view class="{{num===3?'redun':''}}" bindtap="total">总榜</view>
+</view>
+<view class="mtop1 {{monthRank!=='undefined'?'mtop2':''}}" >
+  <view class="df" wx:for="{{arr}}"  wx:key='index' data-item="{{item}}" data-index="{{index}}" bindtap="detailtap">
+    <view>
+      <image src="{{item.cover}}" mode="aspectFit" class="img"></image>
+    </view>
+    <view class="text-c">
+      <view class="fw-b" style="margin-top:10rpx;font-size:30rpx">{{item.title}}</view>
+      <view style="margin:20rpx 0">{{item.author}}</view>
+      <view class="ellipsis">{{item.shortIntro}}</view>
+    </view>
+  </view>
+</view>

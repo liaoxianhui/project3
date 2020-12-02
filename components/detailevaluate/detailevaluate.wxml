@@ -1,0 +1,55 @@
+<view class="headtop">
+  <view class="df">
+    <view style="padding-bottom:10rpx" class="{{num===1?'w':''}}" bindtap="ltap">
+      详情
+    </view>
+    <view style="padding-bottom:10rpx" class="{{num===2?'w':''}}" bindtap="rtap">
+      评价({{evaluate.total}})
+    </view>
+  </view>
+  <view wx:if="{{num===1}}">
+    <scroll-view scroll-y="true" style="height:600rpx">
+      <view style="font-size:30rpx;margin:20rpx">简介：{{longIntro}}</view>
+      <view style="display:flex;justify-content: center;align-items: center;background:#f7f7f7;margin:20rpx">
+        <image src="/assets/images/catalog.png" mode="aspectFit" style="width:40rpx;height:40rpx"></image>
+        <view style="color:#444;font-size:30rpx;padding:10rpx 0">总目录({{chaptersCount}}章)</view>
+      </view>
+      <view style="display:flex;justify-content: space-between;margin:20rpx;font-size:30rpx;">
+        <view>看了这本书的人还喜欢看</view>
+        <view style="display:flex;align-items: center;" bindtap="changetap">
+          <image src="/assets/images/change.png" mode="aspectFit" style="width:40rpx;height:40rpx;margin-right:10rpx">
+          </image>
+          <view style="color:#f50f50">换一换</view>
+        </view>
+      </view>
+      <view style="display:flex;justify-content: space-between;margin:20rpx">
+        <view style="width:200rpx" data-item="{{recommend[random1]}}" bindtap="detailtap">
+          <image src="{{recommend[random1].cover}}" mode="aspectFit" style="width:200rpx;height:300rpx"></image>
+          <view style="text-align:center;font-size:26rpx">{{recommend[random1].title}}</view>
+        </view>
+        <view style="width:200rpx" data-item="{{recommend[random2]}}" bindtap="detailtap">
+          <image src="{{recommend[random2].cover}}" mode="aspectFit" style="width:200rpx;height:300rpx"></image>
+          <view style="text-align:center;font-size:26rpx">{{recommend[random2].title}}</view>
+        </view>
+        <view style="width:200rpx" data-item="{{recommend[random3]}}" bindtap="detailtap">
+          <image src="{{recommend[random3].cover}}" mode="aspectFit" style="width:200rpx;height:300rpx"></image>
+          <view style="text-align:center;font-size:26rpx">{{recommend[random3].title}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view wx:if="{{num===2}}">
+    <scroll-view scroll-y="true" style="height:600rpx">
+      <view class="dfe" wx:for="{{evaluate.docs}}" wx:key='index'>
+        <view>
+          <image src="{{item.author.avatar}}" mode="aspectFit" style="width:100rpx;height:100rpx;border-radius: 50%;">
+          </image>
+        </view>
+        <view style="margin-left:20rpx">
+          <view style="color:red">{{item.author.nickname}}</view>
+          <view style="color:#333;font-size:28rpx">{{item.content}}</view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</view>

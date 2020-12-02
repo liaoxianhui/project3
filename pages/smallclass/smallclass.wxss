@@ -1,0 +1,46 @@
+.df1>view {
+  margin-right: 20rpx;
+}
+
+.df2>view {
+  margin-right: 30rpx;
+}
+
+.acolor {
+  color: #A1A1A1;
+  /* flex-direction: column; */
+}
+
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  line-height: 40rpx;
+  margin-bottom: 10px;
+}
+
+.brd {
+  border-radius: 10rpx;
+  margin-right: 10rpx;
+  font-size: 20rpx;
+}
+
+.index_tab .bottom_scroll {
+  /* width:100%; */
+  white-space: nowrap;
+  /* overflow:hidden; */
+}
+
+.pftop {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 999;
+  background: #fff;
+}
+
+.change {
+  margin-top: 160rpx
+}

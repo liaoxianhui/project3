@@ -1,0 +1,19 @@
+.df{
+  display: flex;
+  justify-content: space-around;
+  font-size: 30rpx;
+  
+}
+.w{
+  border-bottom: 2px solid red;
+  color: red;
+}
+.headtop{
+  margin: 20rpx;
+  background: #ffffff;
+}
+.dfe{
+  display: flex;
+  font-size: 30rpx;
+  margin: 20rpx;
+}

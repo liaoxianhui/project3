@@ -1,0 +1,46 @@
+<view style="background:#f50f50;height:200rpx">
+  <image src="{{arr.cover}}" mode="aspectFit" class="pr" data-item="{{arr.cover}}" bindtap="previewImage"
+    style="box-shadow:0px 0px 10px #000;width:300rpx;height:400rpx;left:50%; transform: translateX(-50%);top:20rpx">
+  </image>
+</view>
+<view wx:if="{{flag===2}}" class="positionimg">
+  <image src="{{arr.cover}}" mode="aspectFit" data-item="{{arr.cover}}" bindlongpress="saveImage" bindtap="previewImage" class="imgposition"></image>
+</view>
+<view class="ta-c" style="margin-top:260rpx">
+  <view class="fw-b mb10">{{arr.title}}</view>
+  <view style="color:#999">{{arr.author}}</view>
+</view>
+<view class="df  fs-14 jc-c mt10 pfixed">
+  <view class="cw mr20" style="border-radius:30rpx;background:#f50f50;padding:10rpx 20rpx" bindtap="readtap">开始阅读</view>
+  <view>
+    <view wx:if="{{num===1}}" data-item="{{arr}}" bindtap="bookshelftap"
+      style="text-align:center;width:180rpx;border-radius:30rpx;background:#fff;padding:10rpx 0rpx;border:1rpx solid #999">
+      加入书架</view>
+    <view wx:if="{{num===2}}" bindtap="bookshelftap"
+      style="text-align:center;width:180rpx;border-radius:30rpx;background:#fff;padding:10rpx 0rpx;border:1rpx solid #999">
+      已加入书架</view>
+  </view>
+</view>
+<view style="background:#f7f7f7;padding-top:50rpx">
+  <view class="df jc-c">
+    <!-- <view class="df">
+      <view wx:for="{{arr4}}" wx:key="index" class="ta-c mb10">
+        <image src="/assets/images/star.png" mode="aspectFit" style="width:40rpx;height:40rpx"></image>
+      </view>
+    </view>
+    <view class="df">
+      <view wx:for="{{5-arr4.length}}" wx:key="index" class="ta-c mb10">
+        <image src="/assets/images/star_g.png" mode="aspectFit" style="width:40rpx;height:40rpx"></image>
+      </view>
+    </view> -->
+    <van-rate value="{{ value }}" size="{{ 25 }}" allow-half color="#ee0a24" void-color="#ccc" void-icon="star"
+      bind:change="onChange" readonly/>
+  </view>
+  <view class="df fs-14 jc-c">
+    <view class="mr10">更新至 </view>
+    <view style="color:#00CDD0">{{arr.lastChapter}}</view>
+  </view>
+  <detailevaluate longIntro="{{arr.longIntro}}" evaluate="{{arr1}}" chaptersCount="{{arr.chaptersCount}}"
+    recommend="{{arr2}}" random1="{{random1}}" random2="{{random2}}" random3="{{random3}}" bind:callSomeFun="getrandom">
+  </detailevaluate>
+</view>

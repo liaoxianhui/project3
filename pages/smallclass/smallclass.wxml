@@ -1,0 +1,41 @@
+<view class="pftop">
+  <view class="fs-14 m10">
+    <view class="df df2">
+      <view wx:for="{{typeList}}" wx:key='index' data-item="{{item}}" data-index="{{index}}" bindtap="bigtap"
+        class="{{name===index? 'cr' :'' }}">{{item.name}}</view>
+    </view>
+  </view>
+  <view class='index_tab fs-14 ml10 mr10 mb10' wx:if="{{arr[num].mins.length>1}}">
+    <scroll-view class="bottom_scroll" scroll-x="true" scroll-left="{{x}}" scroll-with-animation="{{true}}">
+      <view class="df">
+        <view wx:for="{{arr[num].mins}}" style="margin-right:30rpx" data-item="{{item}}" data-index="{{index}}"
+          wx:key='index' data-type="{{item}}" bindtap='switchTap' data-index="{{index}}"
+          class="{{nameindex===index? 'cr' :'' }}">
+          {{item}}</view>
+      </view>
+    </scroll-view>
+  </view>
+</view>
+<view class="{{arr[num].mins.length>1?'change':''}}">
+  <view wx:for="{{arr3}}" wx:key='index' class="df fs-14 m10" data-item="{{item}}" data-index="{{index}}"
+    bindtap="detailtap">
+    <view class="mr10">
+      <image src="{{item.cover}}" mode="scaleToFill" style="width:240rpx;height:300rpx"></image>
+    </view>
+    <view>
+      <view class="fw-b">{{item.title}}</view>
+      <view class="acolor mt10 mb10">{{item.author}}</view>
+      <view class="acolor ellipsis">{{item.shortIntro}}</view>
+      <view class="df" wx:if="{{item.tags.length}}">
+        <!-- <view wx:for="{{item.tags}}"  wx:key='index' wx:for-item="item1" wx:for-index="index1" wx:if="{{index1<3}}"> -->
+        <view class="cw brd" style="background:#FE8B00;padding:10rpx 20rpx;" wx:if="{{item.tags[0]!==undefind}}">
+          {{item.tags[0]}}</view>
+        <view class="cw brd" style="background:#00CDD0;padding:10rpx 20rpx;" wx:if="{{item.tags[1]!==undefind}}">
+          {{item.tags[1]}}</view>
+        <view class="cw brd" style="background:#FE4400;padding:10rpx 20rpx;" wx:if="{{item.tags[2]!==undefind}}">
+          {{item.tags[2]}}</view>
+        <!-- </view> -->
+      </view>
+    </view>
+  </view>
+</view>

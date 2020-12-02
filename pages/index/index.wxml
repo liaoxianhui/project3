@@ -1,0 +1,33 @@
+<view class="df jc-sb ai-c m20">
+  <view class=" df ai-c">
+    <view wx:if="{{ num === 1}}">
+      <image bindtap="clickbtn" src="/assets/images/input.png" style="width:30px;height:30px"></image>
+    </view>
+    <view wx:if="{{ num === 2 }}">
+      <image bindtap="clickbtn" src="/assets/images/complete.png" style="width:30px;height:30px"></image>
+    </view>
+  </view>
+  <view class="df">
+    <view class="df jc-c ai-c">
+      <view class="btn" bindtap="help">帮助</view>
+    </view>
+    <view class="df jc-c ai-c">
+      <image src="/assets/images/refresh.png" style="width:30px;height:30px;"></image>
+    </view>
+  </view>
+</view>
+<view wx:if="{{arr.length===0}}" class="m20 ta-c " style="font-size:16px">
+  主人还没收藏书籍哦，请去书城收藏吧！
+</view>
+<view wx:else>
+  <view class="df fw-w m10">
+    <view wx:for="{{arr}}" wx:key="index" style="margin:20rpx 11rpx;width:30%" data-item="{{item}}" bindtap="readtap">
+      <view class="pr">
+        <image src="{{item.cover}}" mode="aspectFit" style="width:100%;height:300rpx;" class="{{num===2?'shake':''}}"></image>
+        <image src="/assets/images/cleardel.png" mode="aspectFit" class="pa" wx:if="{{num===2}}" data-item="{{item}}"
+          data-index="{{index}}" catchtap="deltap" style="width:60rpx;height:60rpx;top:20rpx;right:10rpx"></image>
+      </view>
+      <view class="ta-c" style="font-size:26rpx">{{item.title}}</view>
+    </view>
+  </view>
+</view>

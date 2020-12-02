@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/bookcity/bookcity",
+    "pages/search/search",
+    "pages/smallclass/smallclass",
+    "pages/detail/detail",
+    "pages/ranking/ranking",
+    "pages/read/read",
+    "components/help/help"
+
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#f50f50",
+    "navigationBarTitleText": "书城微信小程序",
+    "navigationBarTextStyle": "white"
+
+  },
+  "tabBar": {
+    "selectedColor": "#f50f50",
+    "color": "#333333",
+    "list": [{
+        "text": "书架",
+        "iconPath": "/assets/images/shujia.png",
+        "selectedIconPath": "/assets/images/shujia_f50.png",
+        "pagePath": "pages/index/index"
+      },
+      {
+        "text": "书城",
+        "iconPath": "/assets/images/icon_nor.png",
+        "selectedIconPath": "/assets/images/icon_nor_f50.png",
+        "pagePath": "pages/bookcity/bookcity"
+      },
+      {
+        "text": "搜索",
+        "iconPath": "/assets/images/search.png",
+        "selectedIconPath": "/assets/images/search_f50.png",
+        "pagePath": "pages/search/search"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

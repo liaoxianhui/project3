@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "detailevaluate": "/components/detailevaluate/detailevaluate",
+    "van-rate": "../../miniprogram_npm/vant-weapp/rate"
+  },
+  "navigationBarTitleText": "详情"
+}
